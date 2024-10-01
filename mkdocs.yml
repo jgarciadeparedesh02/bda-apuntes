@@ -1,0 +1,49 @@
+site_name: Big Data Aplicado
+nav:
+  - "Inicio": "index.md"
+  - "Planificación": "planificacion.md"
+  - "UT1. Introducción a Big Data Aplicado y Hadoop":
+      - "1. Motivación y Origen": "ut1-introduccion-a-hadoop/1motivacionyorigen.md"
+      - "2. Apache Hadoop a Alto Nivel": 
+          - "2.1. ¿Qué es Apache Hadoop?": "ut1-introduccion-a-hadoop/21queesapachehadoop.md"
+          - "2.2. Ecosistema Hadoop y sus Distribuciones": "ut1-introduccion-a-hadoop/22ecosistemahadoopydistribuciones.md"
+          - "2.3. Arquitectura": "ut1-introduccion-a-hadoop/23arquitectura.md"
+          - "2.4. Beneficios, Desventajas y Dificultades": "ut1-introduccion-a-hadoop/24beneficiosdesventajasydificultades.md"
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+plugins:
+  - search:
+      lang: es
+  - glightbox
+
+theme:
+  name: material
+  features:
+    - navigation.footer
+  palette:
+    - scheme: default
+      primary: light green
+      accent: light green
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      primary: light green
+      accent: light green
+      toggle:
+        icon: material/brightness-4
+        name: Quitar modo oscuro
+extra_css:
+  - stylesheets/extra.css

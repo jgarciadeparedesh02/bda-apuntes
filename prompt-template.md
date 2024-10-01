@@ -1,0 +1,29 @@
+Crea este contenido para que sea más atractivo para el lector, puedes añadir lo que quieras imágenes, diagramas mermaid, emojis, etc. Añade trozos de código para que sea más legible. Evita añadir enlaces de imágenes. Teniendo en cuenta que el tema es JavaScript. Comienza por un titulo 1. El contenido debe tener al menos 1000 palabras
+- Motivación del big data y origen
+- Almacenamiento masivo de datos
+    - 4Vs. Volumen, Velocidad, Variedad y Valor
+    - Sistemas de almacenamiento de datos. Capacidad, Rendimiento, Fiabilidad, Recuperabilidad.
+    - Dispositivos más usados actualmente. Discos(HDD, SDD, RAID), Cintas magnéticas, Almacenamiento en Red, Almacenamiento en la Nube
+    - Métodos avanzados de almacenamiento de datos: Clusters. Todos los tipos de RAID, GlusterFS, MooseFS, CephFileSystem, DRBD
+- Procesamiento de datos
+    - Recolección de datos
+    - Recopilación de datos
+    - Preprocesamiento o limpieza de datos
+    - Procesamiento
+    - Salida / Interpretación
+    - Visualización
+    - Análisis
+    - Almacenamiento
+- Elementos del procesamiento de datos
+- Minería de datos
+- Datos no estructurados
+- Problemas de datos no compatibles
+- Calidad y seguridad de datos
+- Extracción de los datos completa o incremental
+- Procesamiento en clusters
+- Analítica de Big Data
+    - IoT
+    - Analítica en Tiempo Real
+- Big Data y Cloud
+    - Cloud Computing para Big Data y Ventajas
+
