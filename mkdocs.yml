@@ -1,7 +1,6 @@
 site_name: Big Data Aplicado
 nav:
   - "Inicio": "index.md"
-  - "Planificación": "planificacion.md"
   - "UT1. Introducción a Big Data Aplicado y Hadoop":
       - "1. Motivación y Origen": "ut1-introduccion-a-hadoop/1motivacionyorigen.md"
       - "2. Apache Hadoop a Alto Nivel": 
