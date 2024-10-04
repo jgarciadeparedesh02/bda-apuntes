@@ -51,7 +51,7 @@ extra:
     provider: google
     property: G-3VWRJDCQS9
     feedback:
-      title: <a href='httpps://ko-fi.com/jgarciadeparedesh02' title='Invítame a un café en ko-fi.com' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Invítame a un café en ko-fi.com' /></a>
+      title: <a href='https://ko-fi.com/jgarciadeparedesh02' title='Invítame a un café en ko-fi.com' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Invítame a un café en ko-fi.com' /></a>
       ratings:
         - icon: material/emoticon-happy-outline
           name: Esta página es genial
