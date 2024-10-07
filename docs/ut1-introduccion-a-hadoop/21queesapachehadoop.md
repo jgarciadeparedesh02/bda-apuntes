@@ -1,20 +1,14 @@
-# ¿Qué es Apache Hadoop? 🚀
+### ¿Qué es Apache Hadoop? 🚀
 
 **Apache Hadoop** es un marco de software de código abierto diseñado para el almacenamiento y procesamiento masivo de datos en clústeres de computadoras. Gracias a su arquitectura distribuida, Hadoop es capaz de manejar grandes cantidades de información de manera eficiente y rentable, convirtiéndose en un pilar esencial en el mundo del Big Data.
 
-Hadoop no solo almacena datos, sino que también facilita su procesamiento en paralelo, lo que permite analizar información compleja rápidamente. Su capacidad para escalar desde unos pocos servidores hasta miles lo convierte en una herramienta flexible y poderosa para empresas de todos los tamaños.
+Hadoop no solo almacena datos, sino que también facilita su procesamiento en paralelo, lo que permite analizar grandes volúmenes de información de manera rápida. Su capacidad para escalar desde unos pocos servidores hasta miles lo convierte en una herramienta flexible y poderosa para empresas de todos los tamaños.
+
+---
 
 ### 🧠 ¿Cómo Funciona Hadoop?
 
 Hadoop se compone principalmente de cuatro módulos que trabajan en conjunto para proporcionar un ecosistema completo de Big Data:
-
-```mermaid
-graph TD;
-    A[Hadoop] --> B[HDFS];
-    A --> C[YARN];
-    A --> D[MapReduce];
-    A --> E[Hadoop Common];
-```
 
 1. **HDFS (Hadoop Distributed File System)** 📂: Almacena grandes volúmenes de datos distribuidos a través de múltiples nodos, garantizando alta disponibilidad y resistencia a fallos.
 
@@ -34,7 +28,7 @@ Hadoop está diseñado para crecer junto con tus necesidades. Desde unos pocos n
 
 #### 2. **Rentabilidad** 💰
 
-El uso de hardware básico y de bajo costo hace que Hadoop sea una solución asequible para las empresas que necesitan manejar grandes volúmenes de datos. Al contrario de otros sistemas de datos que requieren hardware especializado, Hadoop se ejecuta en servidores comunes, reduciendo significativamente los costos de infraestructura.
+El uso de hardware básico y de bajo costo hace que Hadoop sea una solución asequible para las empresas que necesitan manejar grandes volúmenes de datos. A diferencia de otros sistemas de datos que requieren hardware especializado, Hadoop se ejecuta en servidores comunes, reduciendo significativamente los costos de infraestructura.
 
 #### 3. **Flexibilidad y Adaptabilidad** 🔄
 
@@ -50,77 +44,50 @@ Gracias a MapReduce, Hadoop procesa grandes volúmenes de datos en paralelo, div
 
 ---
 
-### 🧩 Componentes Detallados de Hadoop
+### 🔧 Procesamiento Distribuido, Clústeres y Tipos de Nodos
 
-#### **HDFS (Hadoop Distributed File System)** 📂
+El procesamiento distribuido es el corazón de Apache Hadoop, permitiendo que grandes volúmenes de datos se dividan en partes más pequeñas y se procesen de manera simultánea en varios nodos dentro de un clúster.
 
-El corazón del almacenamiento en Hadoop es HDFS. Diseñado para manejar archivos de gran tamaño, distribuye los datos en bloques a través de múltiples nodos en el clúster. La replicación de bloques asegura que, incluso si un nodo falla, los datos permanezcan accesibles.
+#### **Procesamiento Distribuido**
+
+El procesamiento distribuido implica dividir las tareas de procesamiento de datos en partes más pequeñas, las cuales se ejecutan de forma paralela en diferentes máquinas o nodos. En lugar de procesar los datos de forma secuencial en un solo servidor, Hadoop divide los datos en bloques que son procesados simultáneamente. Esto aumenta la eficiencia y reduce el tiempo necesario para analizar grandes volúmenes de información.
+
+##### **Clústeres en Hadoop**
+
+Un clúster en Hadoop está compuesto por un conjunto de nodos conectados entre sí, que trabajan en conjunto para almacenar y procesar datos de manera distribuida. Los clústeres están diseñados para ser escalables, lo que significa que se pueden agregar más nodos según sea necesario, incrementando la capacidad de procesamiento sin afectar el rendimiento general.
+
+  - **Escalabilidad Horizontal**: Se logra añadiendo más nodos al clúster.
+  - **Distribución de Carga**: Los datos y tareas se distribuyen entre todos los nodos para maximizar el uso eficiente de los recursos.
+
+##### **Tipos de Nodos en Hadoop**
+
+En un clúster de Hadoop, existen varios tipos de nodos que desempeñan funciones críticas dentro del sistema:
+
+1. **Nodo Maestro (NameNode)**:  
+    - **Función**: Coordina el almacenamiento de datos y gestiona el sistema de archivos distribuido (**HDFS**). Supervisa la ubicación de los bloques de datos y garantiza la replicación para asegurar la resistencia a fallos.
+    - **Responsabilidades**: Mantiene el registro de dónde están almacenados los bloques de datos en los **DataNodes**. El **NameNode** es esencial para la administración general del clúster y su buen funcionamiento.
+
+2. **Nodos de Datos (DataNode)**:  
+    - **Función**: Son responsables de almacenar los bloques de datos y responder a las solicitudes del **NameNode**. Estos nodos realizan la mayor parte del trabajo pesado al manejar los datos en bruto.
+    - **Responsabilidades**: Almacenan los bloques de datos y ejecutan las tareas de procesamiento. Cada **DataNode** puede almacenar varias copias de los datos, asegurando la replicación y la alta disponibilidad. Esto garantiza la recuperación de datos en caso de fallos.
+
+3. **Nodos Edge (EdgeNode)**:  
+    - **Función**: Los **nodos edge** actúan como un puente entre el clúster Hadoop y la red externa. Son los nodos a través de los cuales los usuarios pueden interactuar con el clúster, enviar trabajos y obtener resultados.
+    - **Responsabilidades**: Proporcionan interfaces para que los datos y comandos entren y salgan del clúster de manera segura. Estos nodos no almacenan ni procesan datos directamente, pero ofrecen una capa de seguridad y control al filtrar el acceso y las solicitudes a los **NameNodes** y **DataNodes**.
 
 ```mermaid
-graph TD;
-    HDFS[HDFS] -->|Almacena| Datos[Datos];
-    Datos -->|División en| Bloques[Bloques];
-    Bloques -->|Distribución| Nodos[Nodos];
-    Nodos -->|Replicación| Copias[Copias de Seguridad];
+graph LR
+    subgraph Clúster de Hadoop
+        A[NameNode] --> B[DataNode 1]
+        A --> C[DataNode 2]
+        A --> D[DataNode 3]
+    end
+    E[EdgeNode] --> A
+    F[Usuarios] --> E
 ```
+#### **Tolerancia a Fallos en los Nodos**
 
-- **Alta Disponibilidad**: Los datos se replican en varios nodos, garantizando acceso continuo.
-- **Escalabilidad**: Añadir más nodos incrementa automáticamente la capacidad de almacenamiento.
-- **Acceso Rápido**: Diseñado para leer y escribir datos de manera eficiente, optimizando el tiempo de respuesta.
-
-#### **YARN (Yet Another Resource Negotiator)** 🎯
-
-YARN es el cerebro detrás de la asignación de recursos en Hadoop. Se asegura de que cada aplicación tenga acceso a los recursos necesarios para ejecutar sus tareas de manera eficiente.
-
-```javascript
-// Ejemplo básico de cómo YARN maneja tareas
-const yarnTask = {
-  id: 'task123',
-  resources: {
-    cpu: 4, // Núcleos de CPU asignados
-    memory: '16GB' // Memoria asignada
-  },
-  execute: () => {
-    console.log('Ejecutando tarea en el clúster de Hadoop');
-  }
-};
-
-yarnTask.execute();
-```
-
-- **Asignación Dinámica**: Distribuye recursos según la necesidad de las aplicaciones en tiempo real.
-- **Optimización del Clúster**: Maximiza el uso de recursos, evitando cuellos de botella.
-
-#### **MapReduce** 🛠️
-
-MapReduce divide los trabajos en dos etapas: "Map" y "Reduce". En la primera, los datos se procesan y se transforman en pares clave-valor. En la segunda, estos pares se combinan para producir el resultado final.
-
-```javascript
-// Ejemplo simplificado de MapReduce en JavaScript
-const map = (data) => {
-  return data.map(item => ({ key: item, value: 1 })); // Paso de mapeo
-};
-
-const reduce = (mappedData) => {
-  return mappedData.reduce((acc, curr) => {
-    acc[curr.key] = (acc[curr.key] || 0) + curr.value;
-    return acc;
-  }, {});
-};
-
-const data = ['manzana', 'naranja', 'manzana', 'pera'];
-const mapped = map(data);
-const reduced = reduce(mapped);
-
-console.log(reduced); // { manzana: 2, naranja: 1, pera: 1 }
-```
-
-- **Procesamiento Paralelo**: Divide las tareas para ejecutarlas simultáneamente, acelerando el análisis.
-- **Fácil de Escalar**: Añadir más nodos permite manejar volúmenes de datos mayores sin comprometer la velocidad.
-
-#### **Hadoop Common** ⚙️
-
-Es el pegamento que mantiene todo junto, proporcionando las bibliotecas y utilidades necesarias para que los otros módulos funcionen correctamente. Ofrece herramientas esenciales para la configuración, monitoreo y administración del ecosistema Hadoop.
+Hadoop garantiza la **tolerancia a fallos** mediante la replicación de los datos en múltiples DataNodes. Si un nodo falla, los datos aún están disponibles en otros nodos del clúster, lo que evita la pérdida de información y garantiza que el procesamiento continúe sin interrupciones.
 
 ---
 
@@ -150,43 +117,6 @@ Hadoop ha revolucionado múltiples industrias gracias a su capacidad para maneja
 
 ---
 
-### 🚀 ¡Comienza con Hadoop Hoy!
-
-Si tu objetivo es aprovechar al máximo tus datos y llevar tus capacidades analíticas al siguiente nivel, Hadoop es la herramienta que necesitas. Con su escalabilidad, flexibilidad y eficiencia, es una solución inigualable para los desafíos del Big Data en el mundo moderno. Empieza a explorar las posibilidades que Hadoop tiene para ofrecer y desbloquea el verdadero potencial de tus datos.
-
-### 🛠️ Ejemplo Completo de Integración en JavaScript:
-
-```javascript
-const hdfs = require('hdfs'); // Biblioteca para interactuar con HDFS
-
-// Conectar a HDFS
-const client = hdfs({
-  protocol: 'http', // Protocolo de conexión
-  hostname: 'localhost', // Host de Hadoop
-  port: 9870 // Puerto de HDFS
-});
-
-// Crear un nuevo archivo en HDFS
-client.createFile('/user/data.txt', 'Hola, Hadoop!', (err) => {
-  if (err) {
-    console.error('Error al crear archivo:', err);
-  } else {
-    console.log('Archivo creado exitosamente!');
-  }
-});
-
-// Leer archivos en un directorio
-client.listStatus('/user/', (err, files) => {
-  if (err) {
-    console.error('Error al listar archivos:', err);
-  } else {
-    console.log('Archivos en el directorio:', files);
-  }
-});
-```
-
 ### 🌐 Conclusión
 
-Apache Hadoop no es solo una tecnología; es una revolución en la forma en que manejamos y procesamos los datos.
-
- Desde pequeñas startups hasta grandes corporaciones, la adopción de Hadoop ha transformado la capacidad de las organizaciones para tomar decisiones basadas en datos. ¡Es hora de sumergirse en el mundo del Big Data con Hadoop y descubrir lo que puedes lograr!
+Apache Hadoop no es solo una tecnología; es una revolución en la forma en que manejamos y procesamos grandes volúmenes de datos. Desde su capacidad para escalar hasta miles de nodos, hasta su capacidad para procesar datos en paralelo, Hadoop ha transformado la forma en que las organizaciones analizan y gestionan sus datos.
