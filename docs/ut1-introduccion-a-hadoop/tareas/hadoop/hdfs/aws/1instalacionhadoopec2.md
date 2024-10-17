@@ -12,7 +12,6 @@ ssh -i /path/to/your-key.pem ubuntu@<IP_de_la_instancia>
 
 Hadoop requiere Java, así que primero instala Java antes de continuar.
 
-
 1. Actualiza los paquetes de la instancia EC2:
    ```bash
    sudo apt update && sudo apt upgrade -y
@@ -40,6 +39,7 @@ Hadoop requiere Java, así que primero instala Java antes de continuar.
    ```bash
    sudo mv hadoop-3.3.5 /usr/local/hadoop
    ```
+
 ### Paso 4: Configura variables de entorno
 
 Configura las variables de entorno necesarias para Hadoop.
@@ -49,6 +49,7 @@ Configura las variables de entorno necesarias para Hadoop.
    nano ~/.bashrc
    ```
 2. Agrega las siguientes líneas al final del archivo:
+
    ```bash
    export HADOOP_HOME=/usr/local/hadoop
    export HADOOP_INSTALL=$HADOOP_HOME
@@ -59,7 +60,9 @@ Configura las variables de entorno necesarias para Hadoop.
    export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
    export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+   export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
    ```
+
 3. Guarda y cierra el archivo.
 
 4. Aplica los cambios:
@@ -79,6 +82,7 @@ Ahora edita los archivos de configuración de Hadoop.
    ```bash
    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
    ```
+
 ### Paso 6: Configura los archivos core-site.xml y hdfs-site.xml
 
 1. Edita el archivo `core-site.xml`:
@@ -100,9 +104,11 @@ Ahora edita los archivos de configuración de Hadoop.
    </configuration>
    ```
 2. Edita el archivo `hdfs-site.xml`:
+
    ```bash
    nano /usr/local/hadoop/etc/hadoop/hdfs-site.xml
    ```
+
    ```xml
    <configuration>
       <property>
@@ -130,13 +136,14 @@ Ahora edita los archivos de configuración de Hadoop.
       </property>
    </configuration>
    ```
+
    3. Crea las carpetas `hdfs/namenode` y `hdfs/datanode`:
+
    ```bash
    mkdir -p /usr/local/hadoop/tmp
    mkdir -p /usr/local/hadoop/hdfs/namenode
    mkdir -p /usr/local/hadoop/hdfs/datanode
    ```
-
 
 ### Paso 6: Formatea el sistema de archivos de Hadoop
 
@@ -146,6 +153,7 @@ Antes de iniciar Hadoop, necesitas formatear el sistema de archivos.
    ```bash
    hdfs namenode -format
    ```
+
 ### Paso 7: Inicia Hadoop
 
 Para iniciar Hadoop, ejecuta los siguientes comandos:
@@ -172,18 +180,23 @@ Para detener Hadoop, usa los siguientes comandos:
    stop-yarn.sh
    ```
 
-## Posibles errores 
+## Posibles errores
+
 ### Permission denied (publickey).
+
 El error "Permission denied (publickey)" al ejecutar `start-yarn.sh` o similar indica que el sistema está intentando iniciar los nodemanagers y resourcemanager en los nodos locales de Hadoop, pero está fallando la autenticación SSH.
 
 Hadoop, por defecto, intenta comunicarse entre nodos a través de SSH para iniciar YARN, y parece que no se ha configurado correctamente el acceso SSH entre nodos. Si estás ejecutando un clúster pseudo-distribuido (es decir, en una sola máquina), necesitarás configurar SSH para que el usuario actual pueda conectarse a localhost sin contraseña. Aquí están los pasos para solucionar este problema:
 
 #### Paso 1: Configura SSH sin contraseña
+
 1. **Genera un par de claves SSH si no tienes uno ya creado**:
    Ejecuta el siguiente comando y acepta los valores predeterminados:
+
    ```bash
    ssh-keygen -t rsa -P ""
    ```
+
    Esto creará una clave SSH pública y privada en el directorio `~/.ssh/` (por defecto).
 
 2. **Agrega la clave pública al archivo `authorized_keys`** para permitir la autenticación SSH sin contraseña en localhost:
@@ -196,6 +209,7 @@ Hadoop, por defecto, intenta comunicarse entre nodos a través de SSH para inici
    chmod 600 ~/.ssh/authorized_keys
    ```
 4. **Prueba la conexión SSH a localhost** para verificar que puedas conectarte sin contraseña:
+
    ```bash
    ssh localhost
    ```
@@ -203,6 +217,7 @@ Hadoop, por defecto, intenta comunicarse entre nodos a través de SSH para inici
    Si no te pide una contraseña y te deja entrar, la configuración es correcta. Puedes salir de la sesión con `exit`.
 
 #### Paso 2: Inicia YARN de nuevo
+
 Después de configurar SSH, intenta iniciar YARN de nuevo:
 
 ```bash
