@@ -7,8 +7,11 @@ nav:
           - "2.1. ¿Qué es Apache Hadoop?": "ut1-introduccion-a-hadoop/21queesapachehadoop.md"
           - "2.2. Ecosistema Hadoop y sus Distribuciones": "ut1-introduccion-a-hadoop/22ecosistemahadoopydistribuciones.md"
           - "2.3. Arquitectura": "ut1-introduccion-a-hadoop/23arquitectura.md"
-          - "2.4. Beneficios, Desventajas y Dificultades": "ut1-introduccion-a-hadoop/24beneficiosdesventajasydificultades.md"
       - "Prácticas y Tareas": "ut1-introduccion-a-hadoop/indicedetareas.md"
+  - "UT2. Almacenamiento y Procesamiento en Hadoop":
+      - "1. HDFS": "ut2-almacenamiento-y-procesamiento-en-hadoop/1hdfs.md"
+      - "2. MapReduce": "ut2-almacenamiento-y-procesamiento-en-hadoop/2mapreduce.md"
+      - "Prácticas y Tareas": "ut2-almacenamiento-y-procesamiento-en-hadoop/tareas/index.md"
 markdown_extensions:
   - admonition
   - attr_list
