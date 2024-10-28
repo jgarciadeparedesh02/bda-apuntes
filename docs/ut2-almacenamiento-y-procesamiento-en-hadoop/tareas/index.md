@@ -12,3 +12,12 @@ Las prácticas guiadas están diseñadas para que sigas un conjunto de instrucci
         - Subir un archivo de texto a HDFS.
         - Ejecutar un trabajo de MapReduce para contar palabras.
         - Verificar la salida del proceso en HDFS.
+
+- [**Análisis de costos por categoría con MapReduce en Python**](./mapreduce/category-cost-python-sample.md)
+    - **Descripción:** En esta práctica aprenderás a implementar y ejecutar un ejemplo de MapReduce utilizando Python para analizar datos de compras. El objetivo es procesar un archivo de transacciones, agrupar las ventas por tipo de producto y calcular el total de ventas para cada categoría.
+    - **Objetivos:**
+        - Descargar el proyecto de ejemplo desde Google Drive.
+        - Ejecutar un script de shell para descargar los datos de prueba.
+        - Explicar el funcionamiento de los archivos `mapper.py` y `reducer.py`.
+        - Ejecutar el `mapper.py` para observar la salida intermedia.
+        - Ejecutar `mapper.py` y `reducer.py` juntos para obtener el total de ventas por categoría.
