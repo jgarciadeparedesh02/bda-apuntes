@@ -21,3 +21,11 @@ Las prácticas guiadas están diseñadas para que sigas un conjunto de instrucci
         - Explicar el funcionamiento de los archivos `mapper.py` y `reducer.py`.
         - Ejecutar el `mapper.py` para observar la salida intermedia.
         - Ejecutar `mapper.py` y `reducer.py` juntos para obtener el total de ventas por categoría.
+
+- [**Análisis de Visualización en Netflix con MapReduce en Python**](./mapreduce/netflix/enunciado/)
+    - **Descripción:** En esta tarea, desarrollarás un programa en Python utilizando el paradigma de MapReduce para analizar los datos de visualización en Netflix. El objetivo es identificar los días de la semana y las franjas horarias con mayor número de visualizaciones.
+    - **Objetivos:**
+        - Implementar una función `map` que procese las columnas `day_of_week` y `time_of_day`.
+        - Implementar una función `reduce` que acumule el número total de visualizaciones para cada combinación de día y franja horaria.
+        - Ejecutar el programa para obtener un resumen del patrón de visualización.
+        - Interpretar los resultados y explicar qué días y horarios tienen más visualizaciones.
