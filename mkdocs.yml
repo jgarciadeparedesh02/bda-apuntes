@@ -12,6 +12,12 @@ nav:
       - "1. HDFS": "ut2-almacenamiento-y-procesamiento-en-hadoop/1hdfs.md"
       - "2. MapReduce": "ut2-almacenamiento-y-procesamiento-en-hadoop/2mapreduce.md"
       - "Prácticas y Tareas": "ut2-almacenamiento-y-procesamiento-en-hadoop/tareas/index.md"
+  - "UT3. Ecosistema de Hadoop":
+      - "1. Introducción al Ecosistema de Hadoop": "ut3-ecosistema-de-hadoop/1introduccion.md"
+      - "2. Componentes de Acceso y Procesamiento": 
+          - "2.1. Apache Pig": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/21apache-pig.md"
+      - "Prácticas y Tareas": "ut3-ecosistema-hadoop/tareas/index.md"
+
 markdown_extensions:
   - admonition
   - attr_list
