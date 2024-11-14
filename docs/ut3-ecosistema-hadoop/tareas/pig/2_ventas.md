@@ -1,3 +1,7 @@
+Aquí tienes la tarea ampliada con los nuevos ejercicios de ampliación:
+
+---
+
 # Tarea: Análisis de Datos de Ventas usando Apache Pig
 
 ### Objetivo
@@ -57,5 +61,62 @@ fecha,id_cliente,producto,cantidad,precio_unitario
         - Filtra solo las ventas realizadas en la fecha `2024-01-03`.
         - Ordena el resultado por `precio_unitario` en orden ascendente.
     - **Resultado esperado:** Una lista de ventas realizadas el `2024-01-03`, ordenada desde el precio unitario más bajo al más alto.
+
+---
+
+### Ejercicios de Ampliación
+
+4. **Ventas Totales por Cliente**
+
+    Calcula el total de ventas realizadas por cada cliente, sumando el ingreso total generado por cada uno.
+
+    - **Instrucciones:**
+        - Calcula una columna `ingreso` como `cantidad * precio_unitario`.
+        - Agrupa las ventas por `id_cliente` y suma el `ingreso` para cada cliente.
+        - Ordena los resultados en orden descendente de acuerdo con el ingreso total por cliente.
+    - **Resultado esperado:** Una lista de clientes con el total de ingresos que han generado, ordenada de mayor a menor.
+
+5. **Producto Más Vendido por Mes**
+
+    Determina el producto más vendido por mes basado en la cantidad total.
+
+    - **Instrucciones:**
+        - Extrae el mes de la columna `fecha` para agrupar los datos mensualmente.
+        - Agrupa las ventas por `mes` y `producto`.
+        - Calcula la cantidad total vendida de cada producto por mes.
+        - Ordena los resultados para mostrar el producto más vendido primero para cada mes.
+    - **Resultado esperado:** Una lista de productos agrupados por mes, con el producto más vendido de cada mes en la parte superior.
+
+6. **Promedio de Ingresos por Día de la Semana**
+
+    Calcula el ingreso promedio por cada día de la semana para identificar patrones de ventas.
+
+    - **Instrucciones:**
+        - Calcula una columna `ingreso` como `cantidad * precio_unitario`.
+        - Extrae el día de la semana de la columna `fecha`.
+        - Agrupa las ventas por día de la semana y calcula el promedio de `ingreso`.
+    - **Resultado esperado:** Una lista con el ingreso promedio para cada día de la semana.
+
+7. **Top 3 Clientes por Ingreso**
+
+    Identifica los tres clientes que generaron el mayor ingreso total en el periodo registrado en el archivo.
+
+    - **Instrucciones:**
+        - Calcula una columna `ingreso` como `cantidad * precio_unitario`.
+        - Agrupa las ventas por `id_cliente` y suma el `ingreso` para cada cliente.
+        - Ordena los resultados en orden descendente y selecciona los tres primeros clientes.
+    - **Resultado esperado:** Una lista con los tres clientes que generaron el mayor ingreso total.
+
+8. **Análisis de Productos No Vendidos**
+
+    Identifica qué productos no se vendieron en un rango de fechas específico, por ejemplo, entre `2024-01-01` y `2024-01-04`.
+
+    - **Instrucciones:**
+        - Lista todos los productos disponibles en el archivo usando `DISTINCT`.
+        - Filtra las ventas dentro del rango de fechas especificado.
+        - Encuentra los productos que no aparecen en las ventas del rango de fechas.
+    - **Resultado esperado:** Una lista de productos que no tuvieron ninguna venta en el rango de fechas dado.
+
+---
 
 Para cada ejercicio, proporciona el código de Pig que hayas utilizado y una captura de pantalla o salida de los resultados obtenidos. Asegúrate de que el código esté documentado y se entienda claramente.
