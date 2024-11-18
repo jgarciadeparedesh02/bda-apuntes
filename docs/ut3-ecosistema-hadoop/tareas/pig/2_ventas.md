@@ -1,7 +1,3 @@
-Aquí tienes la tarea ampliada con los nuevos ejercicios de ampliación:
-
----
-
 # Tarea: Análisis de Datos de Ventas usando Apache Pig
 
 ### Objetivo

@@ -16,6 +16,7 @@ nav:
       - "1. Introducción al Ecosistema de Hadoop": "ut3-ecosistema-hadoop/1introduccion.md"
       - "2. Componentes de Acceso y Procesamiento": 
           - "2.1. Apache Pig": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/21apache-pig.md"
+          - "2.2. Apache Hive": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/22apache-hive.md"
       - "Prácticas y Tareas": "ut3-ecosistema-hadoop/tareas/index.md"
 
 markdown_extensions:
