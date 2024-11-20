@@ -43,3 +43,16 @@ Las tareas son actividades prácticas donde aplicarás tus conocimientos y resol
         - **Errores en el formato de datos**: verifica que las columnas del archivo sean consistentes.
         - **Falta de archivo**: asegúrate de que `peliculas_streaming.csv` esté en la ubicación correcta.
         - **Directorio de salida existente**: elimina el directorio de salida antes de guardar resultados.
+
+- [**Tarea de Análisis de Dataset con Pig**](./pig/4_csv_eleccion.md)  
+    - **Descripción:** En esta tarea buscarás un dataset real en Kaggle, lo procesarás y ejecutarás consultas en Pig que incluyan filtrados, agrupaciones y ordenaciones.  
+    - **Objetivos:**
+        - Seleccionar y descargar un dataset relevante desde Kaggle en formato CSV.
+        - Cargar el dataset en Pig especificando correctamente los tipos de datos.
+        - Realizar al menos dos filtros para reducir el conjunto de datos.
+        - Agrupar los datos por una columna y calcular métricas como totales o promedios.
+        - Ordenar los datos por un criterio relevante y guardar los resultados procesados.  
+    - **Posibles errores:**
+        - **Formato de datos incorrecto**: verifica que el delimitador y los tipos de columnas sean correctos.
+        - **Falta de archivo**: asegúrate de que el archivo descargado esté accesible.
+        - **Errores en los scripts de Pig**: revisa la sintaxis y las funciones aplicadas.  
