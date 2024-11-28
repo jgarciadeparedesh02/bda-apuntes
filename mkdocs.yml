@@ -3,7 +3,7 @@ nav:
   - "Inicio": "index.md"
   - "UT1. Introducción a Big Data Aplicado y Hadoop":
       - "1. Motivación y Origen": "ut1-introduccion-a-hadoop/1motivacionyorigen.md"
-      - "2. Apache Hadoop a Alto Nivel": 
+      - "2. Apache Hadoop a Alto Nivel":
           - "2.1. ¿Qué es Apache Hadoop?": "ut1-introduccion-a-hadoop/21queesapachehadoop.md"
           - "2.2. Ecosistema Hadoop y sus Distribuciones": "ut1-introduccion-a-hadoop/22ecosistemahadoopydistribuciones.md"
           - "2.3. Arquitectura": "ut1-introduccion-a-hadoop/23arquitectura.md"
@@ -14,9 +14,13 @@ nav:
       - "Prácticas y Tareas": "ut2-almacenamiento-y-procesamiento-en-hadoop/tareas/index.md"
   - "UT3. Ecosistema de Hadoop":
       - "1. Introducción al Ecosistema de Hadoop": "ut3-ecosistema-hadoop/1introduccion.md"
-      - "2. Componentes de Acceso y Procesamiento": 
+      - "2. Componentes de Acceso y Procesamiento":
           - "2.1. Apache Pig": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/21apache-pig.md"
-          - "2.2. Apache Hive": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/22apache-hive.md"
+          - "2.2. Apache Hive":
+              - "2.2.1. Introducción": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/22apache-hive/0introduccion.md"
+              - "2.2.2. Conceptos Fundamentales": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/22apache-hive/1conceptos-fundamentales.md"
+              - "2.2.3. Gestión de Bases de Datos": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/22apache-hive/2gestion-de-bds-apachehive.md"
+              - "2.2.4. Consultas y Optimizaciones": "ut3-ecosistema-hadoop/2componentes-acceso-procesamiento/22apache-hive/3consulta-y-optimizacion.md"
       - "Prácticas y Tareas": "ut3-ecosistema-hadoop/tareas/index.md"
 
 markdown_extensions:
@@ -72,6 +76,6 @@ extra:
         - icon: material/emoticon-sad-outline
           name: Podría mejorar
           data: 0
-          note: >- 
+          note: >-
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
