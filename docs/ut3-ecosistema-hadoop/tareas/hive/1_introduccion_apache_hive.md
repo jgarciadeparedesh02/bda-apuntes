@@ -1,4 +1,4 @@
-### **Tarea: Manejo de Datos en Apache Hive** 🐝
+# **Tarea: Manejo de Datos en Apache Hive** 🐝
 
 #### **Objetivo:**  
 Practicar la creación y gestión de bases de datos y tablas en Apache Hive, incluyendo el uso de particiones, ejecución de consultas básicas y avanzadas, y verificación de datos en HDFS.

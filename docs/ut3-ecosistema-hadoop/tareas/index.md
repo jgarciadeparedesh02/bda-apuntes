@@ -2,7 +2,7 @@
 
 Este índice incluye todas las prácticas guiadas y tareas correspondientes al curso. Asegúrate de seguir las instrucciones cuidadosamente para cada práctica y tarea, y consulta los materiales de apoyo cuando sea necesario.
 
-## Prácticas guiadas
+## **Prácticas guiadas**
 
 Las prácticas guiadas están diseñadas para que sigas un conjunto de instrucciones paso a paso y te familiarices con el entorno y las herramientas utilizadas en Big Data. Cada práctica cubre un aspecto clave del entorno de Hadoop y su ecosistema.
 
@@ -26,9 +26,9 @@ Las prácticas guiadas están diseñadas para que sigas un conjunto de instrucci
 
 ---
 
-## Tareas
+## Tareas de Pig
 
-Las tareas son actividades prácticas donde aplicarás tus conocimientos y resolverás problemas utilizando herramientas como Apache Pig y Hive.
+Las tareas de Pig son actividades prácticas donde aplicarás tus conocimientos y resolverás problemas utilizando Apache Pig.
 
 ### **1. [Tarea Básica de Pig para Ventas](./pig/2_ventas.md)**  
 - **Descripción:** Trabaja con un archivo CSV de datos de ventas y realiza consultas de filtrado y ordenación usando Apache Pig.  
@@ -57,4 +57,14 @@ Las tareas son actividades prácticas donde aplicarás tus conocimientos y resol
 
 ---
 
-Asegúrate de completar todas las prácticas y tareas para desarrollar habilidades clave en el ecosistema de Big Data. 🚀
+## Tareas de Hive
+
+Las tareas de Hive son actividades prácticas donde aplicarás tus conocimientos y resolverás problemas utilizando Apache Hive.
+
+### **4. [Tarea de Consulta sobre Empleados con Hive](./hive/2_empleados.md)**
+- **Descripción:** Usa Apache Hive para realizar consultas sobre un conjunto de datos de empleados.
+- **Objetivos:**
+    - Crear una base de datos y tablas en Hive.
+    - Ejecutar consultas para obtener información relevante.
+
+---
