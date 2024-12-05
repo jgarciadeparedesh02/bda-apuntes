@@ -36,6 +36,7 @@ LOCATION '/user/hive/data/ventas_raw/';
 ```
 
 **Captura requerida:**
+
 - Muestra el comando ejecutado y el resultado de la creación de la tabla (`Table created successfully`).
 - Explica cómo esta tabla sirve como punto de partida para las siguientes operaciones.
 
@@ -59,6 +60,7 @@ STORED AS ORC;
 ```
 
 **Captura requerida:**
+
 - Muestra el comando ejecutado y el resultado de la creación de la tabla particionada (`Table created successfully`).
 - Explica cómo el particionamiento y la clusterización optimizan las consultas en esta tabla.
 
@@ -84,6 +86,7 @@ FROM ventas_raw;
 ```
 
 **Captura requerida:**
+
 - Muestra el comando ejecutado y el resultado del proceso de inserción.
 - Explica cómo la partición se refleja en la estructura del directorio en HDFS.
 
@@ -129,40 +132,47 @@ GROUP BY cliente_id, region;
 1. **Ingreso Total por Mes:**
    Calcula el ingreso total generado en cada mes, ordenado de mayor a menor ingreso.
 
-   **Pista:**
-   - Usa la función `month(fecha)` para extraer el número del mes de la columna `fecha`.
-   - Agrupa los resultados por mes y utiliza la función `SUM()` para calcular el ingreso total.
+    **Pista:**
+
+    - Usa la función `month(fecha)` para extraer el número del mes de la columna `fecha`.
+    - Agrupa los resultados por mes y utiliza la función `SUM()` para calcular el ingreso total.
+
 
 2. **Productos Más Vendidos:**
    Identifica los 5 productos más vendidos (por cantidad total) en cada región.
 
-   **Pista:**
-   - Agrupa los datos por `producto_id` y `region` para sumar las cantidades vendidas con `SUM(cantidad)`.
-   - Usa la función `RANK()` o `ROW_NUMBER()` en una subconsulta para seleccionar los 5 primeros productos por región.
+    **Pista:**
+
+    - Agrupa los datos por `producto_id` y `region` para sumar las cantidades vendidas con `SUM(cantidad)`.
+    - Usa la función `RANK()` o `ROW_NUMBER()` en una subconsulta para seleccionar los 5 primeros productos por región.
 
 3. **Desempeño Regional:**
    Encuentra la región con el ingreso promedio más alto por transacción.
 
-   **Pista:**
-   - Calcula el ingreso promedio por transacción dividiendo `SUM(cantidad * precio)` entre `COUNT(venta_id)` para cada región.
-   - Ordena los resultados en orden descendente para identificar la región con el ingreso más alto.
+    **Pista:**
+
+    - Calcula el ingreso promedio por transacción dividiendo `SUM(cantidad * precio)` entre `COUNT(venta_id)` para cada región.
+    - Ordena los resultados en orden descendente para identificar la región con el ingreso más alto.
 
 4. **Clientes Frecuentes:**
    Determina los clientes que han realizado más de 10 compras en un año, mostrando la cantidad de compras por cliente.
 
-   **Pista:**
-   - Usa la función `year(fecha)` para agrupar las ventas por año.
-   - Agrupa por `cliente_id` y el año, y utiliza `COUNT(venta_id)` para contar las compras.
-   - Filtra los resultados para incluir solo aquellos con más de 10 compras.
+    **Pista:**
+
+    - Usa la función `year(fecha)` para agrupar las ventas por año.
+    - Agrupa por `cliente_id` y el año, y utiliza `COUNT(venta_id)` para contar las compras.
+    - Filtra los resultados para incluir solo aquellos con más de 10 compras.
 
 5. **Análisis Temporal:**
    Calcula el ingreso promedio por producto para cada día de la semana, agrupando las ventas por día.
 
-   **Pista:**
-   - Usa la función `dayofweek(fecha)` para extraer el día de la semana (1 para domingo, 2 para lunes, etc.).
-   - Agrupa los resultados por `dayofweek(fecha)` y `producto_id`, y utiliza `AVG(cantidad * precio)` para calcular el ingreso promedio.
+    **Pista:**
+
+    - Usa la función `dayofweek(fecha)` para extraer el día de la semana (1 para domingo, 2 para lunes, etc.).
+    - Agrupa los resultados por `dayofweek(fecha)` y `producto_id`, y utiliza `AVG(cantidad * precio)` para calcular el ingreso promedio.
 
 **Captura requerida (para todas las consultas):**
+
 - Muestra la ejecución del código SQL y una vista parcial de los resultados.
 - Explica qué aspectos del análisis aportan valor al negocio.
 
@@ -184,6 +194,7 @@ INSERT INTO ventas_raw VALUES
 ```
 
 **Captura requerida:**
+
 - Muestra el comando de inserción y los datos correctamente cargados en la tabla `ventas_raw`.
 
 ---
@@ -191,14 +202,18 @@ INSERT INTO ventas_raw VALUES
 ## **Explicación: Particionamiento y Clusterización**
 
 ### **Particionamiento**
+
 - **¿Qué es?**  
   Divide físicamente los datos en diferentes directorios basados en el valor de una o más columnas (por ejemplo, `region` en este caso).
+
 - **¿Para qué sirve?**  
   Optimiza el acceso a los datos al permitir que las consultas solo lean las particiones relevantes, reduciendo el tiempo de ejecución y el costo de lectura.
 
 ### **Clusterización (Bucketization)**
+
 - **¿Qué es?**  
   Agrupa los datos dentro de una partición utilizando una columna clave (por ejemplo, `cliente_id`) en un número fijo de buckets.
+  
 - **¿Para qué sirve?**  
   - Mejora la eficiencia de las uniones (JOINs) y agrupaciones (GROUP BY).
   - Facilita el trabajo con datos más equilibrados y distribuidos.

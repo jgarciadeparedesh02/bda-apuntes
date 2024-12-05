@@ -2,6 +2,8 @@
 
 Este índice incluye todas las prácticas guiadas y tareas correspondientes al curso. Asegúrate de seguir las instrucciones cuidadosamente para cada práctica y tarea, y consulta los materiales de apoyo cuando sea necesario.
 
+---
+
 ## **Prácticas guiadas**
 
 Las prácticas guiadas están diseñadas para que sigas un conjunto de instrucciones paso a paso y te familiarices con el entorno y las herramientas utilizadas en Big Data. Cada práctica cubre un aspecto clave del entorno de Hadoop y su ecosistema.
@@ -26,7 +28,7 @@ Las prácticas guiadas están diseñadas para que sigas un conjunto de instrucci
 
 ---
 
-## Tareas de Pig
+## **Tareas de Pig**
 
 Las tareas de Pig son actividades prácticas donde aplicarás tus conocimientos y resolverás problemas utilizando Apache Pig.
 
@@ -57,14 +59,25 @@ Las tareas de Pig son actividades prácticas donde aplicarás tus conocimientos 
 
 ---
 
-## Tareas de Hive
+## **Tareas de Hive**
 
 Las tareas de Hive son actividades prácticas donde aplicarás tus conocimientos y resolverás problemas utilizando Apache Hive.
 
-### **4. [Tarea de Consulta sobre Empleados con Hive](./hive/2_empleados.md)**
+### **1. [Tarea de Consulta sobre Empleados con Hive](./hive/2_empleados.md)**
 - **Descripción:** Usa Apache Hive para realizar consultas sobre un conjunto de datos de empleados.
 - **Objetivos:**
     - Crear una base de datos y tablas en Hive.
     - Ejecutar consultas para obtener información relevante.
+
+---
+
+### **2. [Tarea: Análisis Avanzado de Datos de Ventas con Hive](./hive/3_ventas.md)**  
+- **Descripción:** Realiza un análisis avanzado de un conjunto de datos de ventas utilizando Apache Hive. Se trabajará con tablas particionadas y clusterizadas para optimizar las consultas.  
+- **Objetivos:**
+    - Crear tablas particionadas y clusterizadas.
+    - Cargar datos desde una tabla externa en HDFS.
+    - Realizar consultas avanzadas que incluyan funciones de fecha y análisis por categorías.
+    - Generar reportes detallados sobre el desempeño de las ventas por región, producto y cliente.
+    - Documentar el proceso mediante capturas de pantalla de cada paso.
 
 ---
